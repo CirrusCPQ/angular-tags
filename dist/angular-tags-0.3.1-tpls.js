@@ -105,15 +105,13 @@ angular.module("templates/tags.html", []).run(["$templateCache", function($templ
        */
       $scope._filterSrcTags = function filterSrcTags(tag) {
         // wrapped in timeout or typeahead becomes confused
-        return $timeout(function () {
-          var idx = $scope.srcTags.indexOf(tag);
-          if (idx >= 0) {
-            $scope.srcTags.splice(idx, 1);
-            $scope._deletedSrcTags.push(tag);
-            return;
-          }
-          return $q.reject();
-        });
+        var idx = $scope.srcTags.indexOf(tag);
+        if (idx >= 0) {
+          $scope.srcTags.splice(idx, 1);
+          $scope._deletedSrcTags.push(tag);
+          return;
+        }
+        return $q.reject();
       };
 
       /**
