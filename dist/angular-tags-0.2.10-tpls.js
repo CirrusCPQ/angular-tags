@@ -166,7 +166,7 @@ angular.module("templates/tag.html", []).run(["$templateCache", function($templa
 
         $scope._filterSrcTags(tag)
           .then(function () {
-            _add(tag);
+            //_add(tag);
           }, function () {
             if ($scope.options.addable) {
               _add(tag);
