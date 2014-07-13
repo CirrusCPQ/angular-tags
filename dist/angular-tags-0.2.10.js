@@ -110,6 +110,7 @@
         while (i--) {
           if ($scope.tags[i].name === tag.name) {
             fail();
+            return dfrd.promise;
           }
         }
 
